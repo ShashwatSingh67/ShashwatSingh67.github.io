@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shashwat Singh</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0a0a0a;
@@ -39,7 +39,14 @@
   /* Hero */
   .hero { border-bottom: 1px solid var(--border); padding-bottom: 48px; margin-bottom: 64px; }
   .hero-tag { font-size: 11px; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; }
-  .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(48px, 10vw, 88px); font-weight: 800; line-height: 0.95; letter-spacing: -2px; color: #fff; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 11vw, 96px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -1px;
+    color: #fff;
+  }
   .hero h1 span { color: var(--accent); }
   .hero-sub { margin-top: 24px; color: var(--muted); max-width: 480px; font-size: 13px; }
   .hero-links { margin-top: 32px; display: flex; gap: 20px; flex-wrap: wrap; }
@@ -60,12 +67,6 @@
   .about-text { color: #bbb; font-size: 14px; line-height: 1.9; }
   .about-text p + p { margin-top: 16px; }
 
-  /* Stats row */
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--border); margin-top: 40px; }
-  .stat { background: var(--bg); padding: 24px; }
-  .stat-val { font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; color: var(--accent); line-height: 1; }
-  .stat-label { font-size: 11px; color: var(--muted); margin-top: 6px; }
-
   /* Projects */
   .project { border: 1px solid var(--border); padding: 28px; margin-bottom: 16px; transition: border-color 0.2s; }
   .project:hover { border-color: #333; }
@@ -74,8 +75,9 @@
   .project-lang { font-size: 10px; letter-spacing: 0.15em; color: var(--accent2); border: 1px solid var(--accent2); padding: 3px 10px; white-space: nowrap; }
   .project-desc { color: #999; font-size: 13px; line-height: 1.7; }
   .project-highlights { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
-  .highlight { font-size: 12px; color: #777; padding-left: 16px; position: relative; }
+  .highlight { font-size: 12px; color: #777; padding-left: 16px; position: relative; line-height: 1.7; }
   .highlight::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+  .highlight b { color: #b0b0a8; font-weight: 600; }
 
   /* Awards */
   .award { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--border); align-items: start; }
@@ -99,15 +101,17 @@
   .skill-group-label { font-size: 10px; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .tag { font-size: 11px; background: #181818; border: 1px solid #282828; padding: 5px 12px; color: #bbb; }
+  .span-2 { grid-column: span 2; }
 
   /* Contact */
-  .contact-row { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px; }
+  .contact-row { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px; align-items: center; }
   .contact-item { font-size: 13px; color: var(--muted); }
   .contact-item a { color: var(--accent2); text-decoration: none; }
   .contact-item a:hover { color: var(--accent); }
 
   @media (max-width: 560px) {
     .skills-grid { grid-template-columns: 1fr; }
+    .span-2 { grid-column: span 1; }
     .project-header { flex-direction: column; }
     .award { grid-template-columns: 1fr; }
   }
@@ -119,13 +123,13 @@
 
   <!-- HERO -->
   <div class="hero">
-    <p class="hero-tag">Portfolio · 2025</p>
-    <h1>Shash<span>wat</span><br>Singh.</h1>
-    <p class="hero-sub">Electrical & Electronic Engineering + Mathematics & Computer Science student at the University of Adelaide. Building things at the intersection of hardware, software, and competitive problem-solving.</p>
+    <p class="hero-tag">Portfolio · 2026</p>
+    <h1>Shashwat<br>Singh.</h1>
+    <p class="hero-sub">Electrical & Electronic Engineering and Mathematics & Computer Science student @ Adelaide University.</p>
     <div class="hero-links">
-      <a href="mailto:shashwatsingh5021@gmail.com">✉ Email</a>
-      <a href="https://linktr.ee/Shashwat_Singh06" target="_blank">⟶ Linktree</a>
-      <a href="tel:+61410150202">✆ +61 410 150 202</a>
+      <a href="https://www.linkedin.com/in/shashwat-singh-6a165a28b/" target="_blank">⟶ LinkedIn</a>
+      <a href="https://github.com/ShashwatSingh67" target="_blank">⟶ GitHub</a>
+      <a href="Shashwat_Singh_cv.pdf" download="Shashwat_Singh_Resume.pdf">⬇ Resume</a>
     </div>
   </div>
 
@@ -133,14 +137,8 @@
   <section>
     <div class="section-label">About</div>
     <div class="about-text">
-      <p>First-year EEE and MathCS student at the University of Adelaide, with strong interests in avionics, competitive programming, and applied problem-solving across hardware and software systems.</p>
-      <p>Actively involved in algorithmic competitions, avionics engineering projects, and collaborative technical initiatives — including rocket telemetry development, embedded systems work, and data-driven optimisation.</p>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="stat-val">5.37×</div><div class="stat-label">Convolution speedup achieved</div></div>
-      <div class="stat"><div class="stat-val">4th</div><div class="stat-label">SQUAD Datathon placement</div></div>
-      <div class="stat"><div class="stat-val">300+</div><div class="stat-label">Competitors beaten in AllUni</div></div>
-      <div class="stat"><div class="stat-val">80%</div><div class="stat-label">ML model accuracy (Datathon)</div></div>
+      <p>First-year Electrical & Electronic Engineering and Mathematics & Computer Science student at the University of Adelaide with a strong interest in avionics, competitive programming, and applied problem-solving. I enjoy working at the intersection of hardware, software, and data — whether through engineering projects, coding competitions, or group technical collaborations.</p>
+      <p>Actively focused on algorithmic data structures, competitive programming in state and nation wide programming contests, while simultaneously contributing to avionics engineering projects involving hardware design and embedded software development, currently centred on Adelaide University student manufactured rocket telemetry systems. Always open to opportunities that expand technical depth, practical engineering capability, and collaborative innovation.</p>
     </div>
   </section>
 
@@ -153,11 +151,11 @@
         <div class="project-title">Image Convolution Engine</div>
         <span class="project-lang">C++20</span>
       </div>
-      <div class="project-desc">High-performance Gaussian blur engine implementing separable 1D convolution to dramatically outperform naive 2D approaches, with full floating-point accuracy validation.</div>
+      <div class="project-desc">High-performance image convolution engine implementing Gaussian blur with configurable kernel generation, padding strategies, and float-precision processing in a modular pipeline.</div>
       <div class="project-highlights">
-        <div class="highlight">Achieved 5.37× speedup (81% runtime reduction) by refactoring O(N·K²) direct 2D convolution to O(N·K) separable 1D — benchmarked on 612×460 RGB images with 11×11 kernels.</div>
-        <div class="highlight">Validated numerical correctness via MSE of 4.6e-15 and max absolute error of 6.5e-7 against the direct method.</div>
-        <div class="highlight">Built a benchmarking framework (20+ runs) producing structured CSV performance reports for quantitative scalability analysis.</div>
+        <div class="highlight">Achieved a <b>5.37x speedup (81% runtime reduction)</b> by refactoring direct 2D Gaussian convolution <b>(O(N·K²))</b> into a separable 1D implementation <b>(O(N·K))</b> benchmarked on 612×460 RGB images with 11×11 kernels.</div>
+        <div class="highlight">Validated <b>numerical correctness</b> against the direct 2D method using <b>mean squared error (4.6e-15)</b> and <b>maximum absolute error (6.5e-7)</b>, confirming floating-point equivalence.</div>
+        <div class="highlight">Built a <b>benchmarking framework</b> (20+ runs, mean/std computation) that outputs structured <b>CSV performance reports</b> for quantitative scalability analysis.</div>
       </div>
     </div>
 
@@ -166,11 +164,10 @@
         <div class="project-title">Algorithmic Trading Bot Trainer</div>
         <span class="project-lang">Qt / C++</span>
       </div>
-      <div class="project-desc">A full trading simulator for backtesting and running automated strategies in a simulated market, built collaboratively in a team of three using OOP principles.</div>
+      <div class="project-desc">A trading simulator that allows users to test different trading strategies in a simulated market environment, built collaboratively in a team of three.</div>
       <div class="project-highlights">
-        <div class="highlight">Built interactive price and trading history charts alongside real-time performance tracking dashboards.</div>
-        <div class="highlight">Applied polymorphism across trading, charting, and data-handling classes to standardise behaviour and improve system stability.</div>
-        <div class="highlight">Collaborated using object-oriented design patterns to produce automated trading algorithms from a shared codebase.</div>
+        <div class="highlight">Collaborated and combined code in a team of three in <b>Object-Oriented</b> fashion to create <b>automated trading algorithms</b>, interactive price and trading history charts, and <b>real-time performance tracking</b>.</div>
+        <div class="highlight">Applied <b>polymorphism</b> across core trading, charting, and data-handling classes to standardise behaviour and prevent type-specific failures, improving <b>system hierarchy and data conversion stability</b>.</div>
       </div>
     </div>
   </section>
@@ -182,7 +179,7 @@
     <div class="award">
       <div>
         <div class="award-name">Susquehanna Algothon</div>
-        <div class="award-detail">Built a Python trading algorithm with Sharpe-optimised reward functions. Reduced simulated portfolio volatility by ~10–20% compared to baseline strategies.</div>
+        <div class="award-detail">Built a Python-based trading algorithm designed to maximise profits in a simulated market environment. Applied Sharpe-optimised reward functions to improve risk-reduction decision-making. Reduced portfolio volatility by ~10–20% compared to baseline strategies in simulation testing.</div>
       </div>
       <div class="award-date">Jul 2025</div>
     </div>
@@ -190,7 +187,7 @@
     <div class="award">
       <div>
         <div class="award-name">SQUAD Datathon — 4th Place</div>
-        <div class="award-detail">18-hour university-wide datathon. Developed a Random Forest classifier (200 trees) achieving 80% accuracy — a 4% improvement over base models and 99% of the industry benchmark. Improved learning efficiency ~15% through feature selection and noise reduction.</div>
+        <div class="award-detail">18-hour university-wide datathon as part of a three-member team. Implemented a Random Forest classifier (200 trees) achieving 80% accuracy — a 4% improvement over base models and 99% of the industry benchmark. Improved learning efficiency ~15% through feature selection and noise reduction.</div>
       </div>
       <div class="award-date">Apr 2025</div>
     </div>
@@ -259,22 +256,13 @@
           <span class="tag">Qt</span>
         </div>
       </div>
-      <div class="skill-group">
+      <div class="skill-group span-2">
         <div class="skill-group-label">Hardware</div>
         <div class="skill-tags">
           <span class="tag">PCB Design</span>
           <span class="tag">IMU Integration</span>
           <span class="tag">Sensor Fusion</span>
           <span class="tag">Embedded Systems</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-label">Software & Methods</div>
-        <div class="skill-tags">
-          <span class="tag">Competitive Programming</span>
-          <span class="tag">Machine Learning</span>
-          <span class="tag">Algorithmic Trading</span>
-          <span class="tag">OOP</span>
         </div>
       </div>
     </div>
@@ -286,8 +274,7 @@
     <p style="color:#888;font-size:13px;">Currently based in Adelaide, Australia. Open to internships, research roles, and interesting collaborations.</p>
     <div class="contact-row">
       <div class="contact-item">Email: <a href="mailto:shashwatsingh5021@gmail.com">shashwatsingh5021@gmail.com</a></div>
-      <div class="contact-item">Phone: <a href="tel:+61410150202">+61 410 150 202</a></div>
-      <div class="contact-item">Links: <a href="https://linktr.ee/Shashwat_Singh06" target="_blank">linktr.ee/Shashwat_Singh06</a></div>
+      <div class="contact-item">LinkedIn: <a href="https://www.linkedin.com/in/shashwat-singh-6a165a28b/" target="_blank">shashwat-singh</a></div>
     </div>
   </section>
 
