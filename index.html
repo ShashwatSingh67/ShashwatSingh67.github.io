@@ -2,22 +2,9 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-
-    <!-- 
-      TODO
-
-      Upload your Unemployable (or whatever photo you like) to the assets/images folder
-      and change the name of the image below to match the uploaded one
-
-      Change the title in the <title> tag to whatever you would like the title of your portfolio to be
-
-      This should be the same across all pages.
-     -->
-
-    
     <link rel="icon" href="./assets/images/s.png" />
 		<title>Shashwat Singh</title>
-    <meta name="description" content="A portfolio template for the Unemployables community.">
+    <meta name="description" content="Portfolio of Shashwat Singh">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<link rel="stylesheet" href="./css/layout.css">
@@ -27,160 +14,108 @@
 		<script defer src="./js/script.js"></script>
 	</head>
 	<body>
-    <!-- NAVBAR -->
+
     <div class="navbar">
       <a class="nav-title-link" href="./index.html">
-        <!-- TODO - Change the "Portfolio Title" to whatever you want displayed in the top left -->
         <span class="nav-title">Shashwat Singh</span>
-         <!-- TODO - Change the email after 'mailto:' to your email address for contact -->
         <a class="button" href="mailto:shashwatsingh21@gmail.com">
           <span class="button-text">Contact Me</span>
         </a>
       </a>
     </div>
 
-    <!-- MAIN PAGE CONTENT -->
     <div id="main-content">
 
-      <!-- PORTFOLIO HEADER -->
       <div id="portfolio-header">
         <div id="portfolio-header-image-container">
-          <!-- 
-            TODO
-
-            - Change the img "src" attribute to point to the Unemployable image you uploaded (or whatever image).
-            - Change the number to point to your Unemployable & replace the OpenSea link with your own
-            - If you aren't using an Unemployable as your image, remove the entire "a" element
-          -->
           <img src="./assets/images/1311.png" class="portfolio-header-image">
-          <a class="no-underline" target="_blank" href="https://opensea.io/assets/0xe0be388ab81c47b0f098d2030a1c9ef190691a8a/1311">
-            <span class="image-caption"> </span>
-          </a>
         </div>
 
-          <!-- 
-            TODO
-
-            - Change the main-title to whatver you want
-            - Change the body-text after that to a quick introduction to what you do
-            - Edit the button text if you feel like it. It will link to the projects section below.
-          -->
         <div id="portfolio-header-text-container">
             <div class="header-text">
               <span class="main-title">Hey, I'm Shashwat Singh.</span>
-              <div class="body-text">Electrical Engineering and  Computer Science @Adelaide University</div>
+              <div class="body-text">Electrical Engineering and Computer Science student @ Adelaide University</div>
             </div>
-            <!-- <a class="button" id="my-work-link">
-              <span class="button-text">Check out my projects</span> 
+            <a class="button" id="my-work-link">
+              <span class="button-text">Check out my projects</span>
               <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a> -->
+            </a>
         </div>
       </div>
 
-      <!-- ABOUT SECTION -->
-      <!-- 
-        TODO
-
-        - Change the subheader-text to whatever header you want
-        - Add paragraphs using the <div class="body-text"></div> elements in the "about-section-content"
-      -->
       <div id="about-section">
         <span class="subheader-text">My Background / About Me</span>
         <div class="about-section-content">
-          <div class="body-text">First-year Electrical & Electronic Engineering and Mathematics & Computer Science student at the University of Adelaide with a strong interest in avionics, competitive programming, and applied problem-solving. I enjoy working at the intersection of hardware, software, and data — whether through engineering projects, coding competitions, or group technical collaborations.</div>
-          <div class="body-text">Actively focused on algorithmic data structures, competitive programming in state and nation wide programming contests, while simultaneously contributing to avionics engineering projects involving hardware design and embedded software development, currently centred on Adelaide University student manufactured rocket telemetry systems. Always open to opportunities that expand technical depth, practical engineering capability, and collaborative innovation.</div>
+          <div class="body-text">First-year Electrical & Electronic Engineering and Mathematics & Computer Science student at the University of Adelaide with strong interests in avionics, competitive programming, and applied problem solving across hardware and software systems.</div>
+          <div class="body-text">Actively involved in algorithmic competitions, avionics engineering projects, and collaborative technical initiatives including rocket telemetry development, embedded systems experimentation, and data-driven optimisation work.</div>
         </div>
       </div>
 
-      <!-- PROJECTS / MY WORK SECTION -->
       <div id="my-work-section">
-        <!-- TODO - Change the subheader-text to whatever you want the Projects section header to say -->
-        <span class="subheader-text">My Work / My Projects</span>
+        <span class="subheader-text">Projects</span>
 
         <div class="projects-container">
-          <!-- 
-            TODO
 
-            This is where the project cards live. Here's a base level project card for you to copy:
-            <div class="project-card">
-              <img src="./assets/images/IMAGE_NAME" class="project-image">
-              <div class="project-card-text-container">
-                <div class="subheader-text project-title">PROJECT_NAME</div>
-                <div class="body-text project-card-text">SMALL_PROJECT_DESCRIPTION</div>
-              </div>
-              <a class="button" href="./project-pages/PROJECT_PAGE_NAME.html">
-                <span class="button-text">Read More</span>
-                <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-              </a>
-            </div>
-
-            - To add a project to the this area, copy the above, paste it below this comment, and change the following:
-                - IMAGE_NAME: the name of the image file in assets/images
-                - PROJECT_NAME: the name of the project (keep it short, it only shows 1 line)
-                - SMALL_PROJECT_DESCRIPTION: a quick project description (max 4 lines)
-                - PROJECT_PAGE_NAME.html: the html filename for the project (must be in project-pages folder)
-          -->
-          <div class="project-card">
-            <img src="./assets/images/desktop.jpeg" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Project Name</div>
-              <div class="body-text project-card-text">Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium</div>
-            </div>
-            <a class="button" href="./project-pages/project-template.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-          </div>
           <div class="project-card">
             <img src="./assets/images/code.jpeg" class="project-image">
             <div class="project-card-text-container">
-              <div class="subheader-text project-title">Project Name</div>
-              <div class="body-text project-card-text">Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium</div>
+              <div class="subheader-text project-title">Image Convolution Engine (C++)</div>
+              <div class="body-text project-card-text">
+                High‑performance Gaussian blur engine in C++20 using separable convolution optimisation. Achieved ~5× speedup over direct 2D convolution with floating‑point accuracy validation and structured performance benchmarking outputs.
+              </div>
             </div>
-            <a class="button" href="./project-pages/project-template.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
           </div>
+
           <div class="project-card">
-            <img src="./assets/images/sketchbook.jpeg" class="project-image">
+            <img src="./assets/images/desktop.jpeg" class="project-image">
             <div class="project-card-text-container">
-              <div class="subheader-text project-title">Super Long Project Name That Should be Hidden</div>
-              <div class="body-text project-card-text">Elit pellentesque habitant morbi tristique senectus et netus et. Elementum tempus egestas sed sed risus pretium quam. Nibh ipsum consequat nisl vel pretium</div>
+              <div class="subheader-text project-title">Algorithmic Trading Bot Trainer</div>
+              <div class="body-text project-card-text">
+                Qt/C++ trading simulator supporting strategy testing, automated algorithm execution, interactive charting, and real‑time performance tracking. Built collaboratively using object‑oriented design principles.
+              </div>
             </div>
-            <a class="button" href="./project-pages/project-template.html">
-              <span class="button-text">Read More</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
           </div>
+
         </div>
       </div>
+
+      <div id="community-section">
+        <span class="subheader-text">Community Involvement</span>
+        <div class="about-section-content">
+
+          <div class="body-text">
+            <strong>Adelaide Competitive Programming Club — Sponsorship Officer:</strong>
+            Built outreach pipelines, maintained industry correspondence, and secured sponsorship connections while actively competing in algorithmic contests.
+          </div>
+
+          <div class="body-text">
+            <strong>Adept Rocketry (Avionics Team):</strong>
+            Contributed to rocket telemetry avionics including IMU and barometric sensor integration, onboard logging, sensor fusion validation, and flight‑data visualisation tooling.
+          </div>
+
+          <div class="body-text">
+            <strong>Adelaide Rover Team:</strong>
+            Designed PCB schematics in Altium for rover lighting subsystems with reliability optimisations such as reverse‑polarity protection and voltage tolerance safeguards.
+          </div>
+
+        </div>
+      </div>
+
+      <div id="skills-section">
+        <span class="subheader-text">Skills</span>
+        <div class="about-section-content">
+          <div class="body-text"><strong>Languages:</strong> C++, C, Python, MATLAB</div>
+          <div class="body-text"><strong>Technologies:</strong> STM Cube IDE, Arduino IDE, Altium Designer, Git</div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- FOOTER -->
     <div id="footer">
-      <!-- 
-        TODO - Change href to your Instagram account (can also delete entire "a" element if no Instagram) 
-
-        This should be the same across all pages.
-      -->
-      <a class="icon-link" target="_blank" href="https://twitter.com/whitevans_eth">
-        <image src="./assets/icons/instagram.svg" class="footer-icon"/>
-      </a>
-      <!-- 
-        TODO - Change href to your Twitter account (can also delete entire "a" element if no Twitter) 
-      
-        This should be the same across all pages.
-      -->
       <a class="icon-link" target="_blank" href="https://twitter.com/whitevans_eth">
         <image src="./assets/icons/twitter.svg" class="footer-icon"/>
       </a>
-      <!-- 
-        TODO - Change the email after "mailto" to your contact email 
-      
-        This should be the same across all pages.
-      -->
-      <a class="icon-link" href="mailto:whitevans.eth@gmail.com">
+      <a class="icon-link" href="mailto:shashwatsingh21@gmail.com">
         <image src="./assets/icons/mail.svg" class="footer-icon"/>
       </a>
     </div>
