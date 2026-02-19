@@ -1,124 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-    <link rel="icon" href="./assets/images/s.png" />
-		<title>Shashwat Singh</title>
-    <meta name="description" content="Portfolio of Shashwat Singh">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shashwat Singh</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111;
+    --border: #222;
+    --accent: #e8ff47;
+    --accent2: #47b3ff;
+    --text: #e8e8e0;
+    --muted: #666;
+  }
 
-		<link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/typography.css">
-    <link rel="stylesheet" href="./css/utilities.css">
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-		<script defer src="./js/script.js"></script>
-	</head>
-	<body>
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 
-    <div class="navbar">
-      <a class="nav-title-link" href="./index.html">
-        <span class="nav-title">Shashwat Singh</span>
-        <a class="button" href="mailto:shashwatsingh21@gmail.com">
-          <span class="button-text">Contact Me</span>
-        </a>
-      </a>
+  .grain {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-size: 180px;
+    opacity: 0.4;
+  }
+
+  main { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; padding: 60px 24px 120px; }
+
+  /* Hero */
+  .hero { border-bottom: 1px solid var(--border); padding-bottom: 48px; margin-bottom: 64px; }
+  .hero-tag { font-size: 11px; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; }
+  .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(48px, 10vw, 88px); font-weight: 800; line-height: 0.95; letter-spacing: -2px; color: #fff; }
+  .hero h1 span { color: var(--accent); }
+  .hero-sub { margin-top: 24px; color: var(--muted); max-width: 480px; font-size: 13px; }
+  .hero-links { margin-top: 32px; display: flex; gap: 20px; flex-wrap: wrap; }
+  .hero-links a {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 20px; border: 1px solid var(--border);
+    color: var(--text); text-decoration: none; font-size: 12px;
+    letter-spacing: 0.08em; transition: all 0.2s;
+  }
+  .hero-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Sections */
+  section { margin-bottom: 72px; }
+  .section-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 32px; display: flex; align-items: center; gap: 16px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* About */
+  .about-text { color: #bbb; font-size: 14px; line-height: 1.9; }
+  .about-text p + p { margin-top: 16px; }
+
+  /* Stats row */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--border); margin-top: 40px; }
+  .stat { background: var(--bg); padding: 24px; }
+  .stat-val { font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; color: var(--accent); line-height: 1; }
+  .stat-label { font-size: 11px; color: var(--muted); margin-top: 6px; }
+
+  /* Projects */
+  .project { border: 1px solid var(--border); padding: 28px; margin-bottom: 16px; transition: border-color 0.2s; }
+  .project:hover { border-color: #333; }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 14px; }
+  .project-title { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: #fff; }
+  .project-lang { font-size: 10px; letter-spacing: 0.15em; color: var(--accent2); border: 1px solid var(--accent2); padding: 3px 10px; white-space: nowrap; }
+  .project-desc { color: #999; font-size: 13px; line-height: 1.7; }
+  .project-highlights { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
+  .highlight { font-size: 12px; color: #777; padding-left: 16px; position: relative; }
+  .highlight::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+  /* Awards */
+  .award { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--border); align-items: start; }
+  .award:first-of-type { border-top: 1px solid var(--border); }
+  .award-name { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .award-detail { font-size: 12px; color: #888; line-height: 1.6; }
+  .award-date { font-size: 11px; color: var(--accent); white-space: nowrap; }
+
+  /* Community */
+  .role { padding: 22px 0; border-bottom: 1px solid var(--border); }
+  .role:first-of-type { border-top: 1px solid var(--border); }
+  .role-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+  .role-title { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: #fff; }
+  .role-period { font-size: 11px; color: var(--muted); }
+  .role-org { font-size: 11px; color: var(--accent2); letter-spacing: 0.1em; margin-bottom: 10px; }
+  .role-desc { font-size: 12px; color: #888; line-height: 1.7; }
+
+  /* Skills */
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+  .skill-group { background: var(--bg); padding: 24px; }
+  .skill-group-label { font-size: 10px; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-size: 11px; background: #181818; border: 1px solid #282828; padding: 5px 12px; color: #bbb; }
+
+  /* Contact */
+  .contact-row { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px; }
+  .contact-item { font-size: 13px; color: var(--muted); }
+  .contact-item a { color: var(--accent2); text-decoration: none; }
+  .contact-item a:hover { color: var(--accent); }
+
+  @media (max-width: 560px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .project-header { flex-direction: column; }
+    .award { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="hero-tag">Portfolio · 2025</p>
+    <h1>Shash<span>wat</span><br>Singh.</h1>
+    <p class="hero-sub">Electrical & Electronic Engineering + Mathematics & Computer Science student at the University of Adelaide. Building things at the intersection of hardware, software, and competitive problem-solving.</p>
+    <div class="hero-links">
+      <a href="mailto:shashwatsingh5021@gmail.com">✉ Email</a>
+      <a href="https://linktr.ee/Shashwat_Singh06" target="_blank">⟶ Linktree</a>
+      <a href="tel:+61410150202">✆ +61 410 150 202</a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="section-label">About</div>
+    <div class="about-text">
+      <p>First-year EEE and MathCS student at the University of Adelaide, with strong interests in avionics, competitive programming, and applied problem-solving across hardware and software systems.</p>
+      <p>Actively involved in algorithmic competitions, avionics engineering projects, and collaborative technical initiatives — including rocket telemetry development, embedded systems work, and data-driven optimisation.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-val">5.37×</div><div class="stat-label">Convolution speedup achieved</div></div>
+      <div class="stat"><div class="stat-val">4th</div><div class="stat-label">SQUAD Datathon placement</div></div>
+      <div class="stat"><div class="stat-val">300+</div><div class="stat-label">Competitors beaten in AllUni</div></div>
+      <div class="stat"><div class="stat-val">80%</div><div class="stat-label">ML model accuracy (Datathon)</div></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <div class="section-label">Projects</div>
+
+    <div class="project">
+      <div class="project-header">
+        <div class="project-title">Image Convolution Engine</div>
+        <span class="project-lang">C++20</span>
+      </div>
+      <div class="project-desc">High-performance Gaussian blur engine implementing separable 1D convolution to dramatically outperform naive 2D approaches, with full floating-point accuracy validation.</div>
+      <div class="project-highlights">
+        <div class="highlight">Achieved 5.37× speedup (81% runtime reduction) by refactoring O(N·K²) direct 2D convolution to O(N·K) separable 1D — benchmarked on 612×460 RGB images with 11×11 kernels.</div>
+        <div class="highlight">Validated numerical correctness via MSE of 4.6e-15 and max absolute error of 6.5e-7 against the direct method.</div>
+        <div class="highlight">Built a benchmarking framework (20+ runs) producing structured CSV performance reports for quantitative scalability analysis.</div>
+      </div>
     </div>
 
-    <div id="main-content">
-
-      <div id="portfolio-header">
-        <div id="portfolio-header-image-container">
-          <img src="./assets/images/1311.png" class="portfolio-header-image">
-        </div>
-
-        <div id="portfolio-header-text-container">
-            <div class="header-text">
-              <span class="main-title">Hey, I'm Shashwat Singh.</span>
-              <div class="body-text">Electrical Engineering and Computer Science student @ Adelaide University</div>
-            </div>
-            <a class="button" id="my-work-link">
-              <span class="button-text">Check out my projects</span>
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-        </div>
+    <div class="project">
+      <div class="project-header">
+        <div class="project-title">Algorithmic Trading Bot Trainer</div>
+        <span class="project-lang">Qt / C++</span>
       </div>
-
-      <div id="about-section">
-        <span class="subheader-text">My Background / About Me</span>
-        <div class="about-section-content">
-          <div class="body-text">First-year Electrical & Electronic Engineering and Mathematics & Computer Science student at the University of Adelaide with strong interests in avionics, competitive programming, and applied problem solving across hardware and software systems.</div>
-          <div class="body-text">Actively involved in algorithmic competitions, avionics engineering projects, and collaborative technical initiatives including rocket telemetry development, embedded systems experimentation, and data-driven optimisation work.</div>
-        </div>
+      <div class="project-desc">A full trading simulator for backtesting and running automated strategies in a simulated market, built collaboratively in a team of three using OOP principles.</div>
+      <div class="project-highlights">
+        <div class="highlight">Built interactive price and trading history charts alongside real-time performance tracking dashboards.</div>
+        <div class="highlight">Applied polymorphism across trading, charting, and data-handling classes to standardise behaviour and improve system stability.</div>
+        <div class="highlight">Collaborated using object-oriented design patterns to produce automated trading algorithms from a shared codebase.</div>
       </div>
+    </div>
+  </section>
 
-      <div id="my-work-section">
-        <span class="subheader-text">Projects</span>
+  <!-- AWARDS -->
+  <section>
+    <div class="section-label">Awards & Achievements</div>
 
-        <div class="projects-container">
-
-          <div class="project-card">
-            <img src="./assets/images/code.jpeg" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Image Convolution Engine (C++)</div>
-              <div class="body-text project-card-text">
-                High‑performance Gaussian blur engine in C++20 using separable convolution optimisation. Achieved ~5× speedup over direct 2D convolution with floating‑point accuracy validation and structured performance benchmarking outputs.
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <img src="./assets/images/desktop.jpeg" class="project-image">
-            <div class="project-card-text-container">
-              <div class="subheader-text project-title">Algorithmic Trading Bot Trainer</div>
-              <div class="body-text project-card-text">
-                Qt/C++ trading simulator supporting strategy testing, automated algorithm execution, interactive charting, and real‑time performance tracking. Built collaboratively using object‑oriented design principles.
-              </div>
-            </div>
-          </div>
-
-        </div>
+    <div class="award">
+      <div>
+        <div class="award-name">Susquehanna Algothon</div>
+        <div class="award-detail">Built a Python trading algorithm with Sharpe-optimised reward functions. Reduced simulated portfolio volatility by ~10–20% compared to baseline strategies.</div>
       </div>
-
-      <div id="community-section">
-        <span class="subheader-text">Community Involvement</span>
-        <div class="about-section-content">
-
-          <div class="body-text">
-            <strong>Adelaide Competitive Programming Club — Sponsorship Officer:</strong>
-            Built outreach pipelines, maintained industry correspondence, and secured sponsorship connections while actively competing in algorithmic contests.
-          </div>
-
-          <div class="body-text">
-            <strong>Adept Rocketry (Avionics Team):</strong>
-            Contributed to rocket telemetry avionics including IMU and barometric sensor integration, onboard logging, sensor fusion validation, and flight‑data visualisation tooling.
-          </div>
-
-          <div class="body-text">
-            <strong>Adelaide Rover Team:</strong>
-            Designed PCB schematics in Altium for rover lighting subsystems with reliability optimisations such as reverse‑polarity protection and voltage tolerance safeguards.
-          </div>
-
-        </div>
-      </div>
-
-      <div id="skills-section">
-        <span class="subheader-text">Skills</span>
-        <div class="about-section-content">
-          <div class="body-text"><strong>Languages:</strong> C++, C, Python, MATLAB</div>
-          <div class="body-text"><strong>Technologies:</strong> STM Cube IDE, Arduino IDE, Altium Designer, Git</div>
-        </div>
-      </div>
-
+      <div class="award-date">Jul 2025</div>
     </div>
 
-    <div id="footer">
-      <a class="icon-link" target="_blank" href="https://twitter.com/whitevans_eth">
-        <image src="./assets/icons/twitter.svg" class="footer-icon"/>
-      </a>
-      <a class="icon-link" href="mailto:shashwatsingh21@gmail.com">
-        <image src="./assets/icons/mail.svg" class="footer-icon"/>
-      </a>
+    <div class="award">
+      <div>
+        <div class="award-name">SQUAD Datathon — 4th Place</div>
+        <div class="award-detail">18-hour university-wide datathon. Developed a Random Forest classifier (200 trees) achieving 80% accuracy — a 4% improvement over base models and 99% of the industry benchmark. Improved learning efficiency ~15% through feature selection and noise reduction.</div>
+      </div>
+      <div class="award-date">Apr 2025</div>
     </div>
 
-	</body>
+    <div class="award">
+      <div>
+        <div class="award-name">ACPC Competitive Programming</div>
+        <div class="award-detail">Participated in AUCPL, AllUni, and the South Pacific ICPC Preliminary Contest. First-solved a problem in AllUni against 300+ competitors across Australia and New Zealand.</div>
+      </div>
+      <div class="award-date">Feb 2025 – Present</div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section>
+    <div class="section-label">Community Involvement</div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Sponsorships Officer</div>
+        <div class="role-period">Feb 2025 – Present</div>
+      </div>
+      <div class="role-org">Adelaide Competitive Programming Club (ACPC)</div>
+      <div class="role-desc">Constructed structured outreach pipelines and maintained corporate correspondence to acquire sponsorships from industry partners. Personally networked with university contacts to grow company connections.</div>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Avionics Team Member</div>
+        <div class="role-period">Apr 2025 – Present</div>
+      </div>
+      <div class="role-org">Adept Rocketry Division</div>
+      <div class="role-desc">Engineered rocket avionics from scratch — integrating IMU and barometric pressure sensors, implementing onboard data logging at 30 Hz, performing sensor fusion testing, and hardware-in-loop validation. Refined 3D flight-data visualisation scripts for multi-axis coordinate plots.</div>
+    </div>
+
+    <div class="role">
+      <div class="role-header">
+        <div class="role-title">Chassis Lighting System — PCB Designer</div>
+        <div class="role-period">Jul 2025 – Present</div>
+      </div>
+      <div class="role-org">Adelaide Rover Team</div>
+      <div class="role-desc">Designed schematics and industry-standard PCBs in Altium Designer. Implemented reverse-polarity protection and maximum stand-off voltage considerations to minimise electrical failure risk. Worked closely across multiple sub-teams in a coordinated professional environment.</div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-label">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-label">Languages</div>
+        <div class="skill-tags">
+          <span class="tag">C++</span>
+          <span class="tag">C</span>
+          <span class="tag">Python</span>
+          <span class="tag">MATLAB</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Technologies</div>
+        <div class="skill-tags">
+          <span class="tag">STM Cube IDE</span>
+          <span class="tag">Arduino IDE</span>
+          <span class="tag">Altium Designer</span>
+          <span class="tag">Git</span>
+          <span class="tag">Qt</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Hardware</div>
+        <div class="skill-tags">
+          <span class="tag">PCB Design</span>
+          <span class="tag">IMU Integration</span>
+          <span class="tag">Sensor Fusion</span>
+          <span class="tag">Embedded Systems</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Software & Methods</div>
+        <div class="skill-tags">
+          <span class="tag">Competitive Programming</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Algorithmic Trading</span>
+          <span class="tag">OOP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="section-label">Contact</div>
+    <p style="color:#888;font-size:13px;">Currently based in Adelaide, Australia. Open to internships, research roles, and interesting collaborations.</p>
+    <div class="contact-row">
+      <div class="contact-item">Email: <a href="mailto:shashwatsingh5021@gmail.com">shashwatsingh5021@gmail.com</a></div>
+      <div class="contact-item">Phone: <a href="tel:+61410150202">+61 410 150 202</a></div>
+      <div class="contact-item">Links: <a href="https://linktr.ee/Shashwat_Singh06" target="_blank">linktr.ee/Shashwat_Singh06</a></div>
+    </div>
+  </section>
+
+</main>
+</body>
 </html>
