@@ -22,7 +22,7 @@
     background: var(--bg);
     color: var(--text);
     font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.7;
     overflow-x: hidden;
   }
@@ -34,7 +34,7 @@
     opacity: 0.4;
   }
 
-  main { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; padding: 60px 24px 120px; }
+  main { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 60px 48px 120px; }
 
   /* Hero */
   .hero { border-bottom: 1px solid var(--border); padding-bottom: 48px; margin-bottom: 64px; }
@@ -48,7 +48,7 @@
     color: #fff;
   }
   .hero h1 span { color: var(--accent); }
-  .hero-sub { margin-top: 24px; color: var(--muted); max-width: 480px; font-size: 13px; }
+  .hero-sub { margin-top: 24px; color: var(--muted); max-width: 600px; font-size: 14px; }
   .hero-links { margin-top: 32px; display: flex; gap: 20px; flex-wrap: wrap; }
   .hero-links a {
     display: inline-flex; align-items: center; gap: 8px;
@@ -64,56 +64,58 @@
   .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
   /* About */
-  .about-text { color: #bbb; font-size: 14px; line-height: 1.9; }
+  .about-text { color: #fff; font-size: 15px; line-height: 1.9; }
   .about-text p + p { margin-top: 16px; }
 
   /* Projects */
   .project { border: 1px solid var(--border); padding: 28px; margin-bottom: 16px; transition: border-color 0.2s; }
   .project:hover { border-color: #333; }
   .project-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 14px; }
-  .project-title { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: #fff; }
+  .project-title { font-family: 'Syne', sans-serif; font-size: 19px; font-weight: 700; color: #fff; }
   .project-lang { font-size: 10px; letter-spacing: 0.15em; color: var(--accent2); border: 1px solid var(--accent2); padding: 3px 10px; white-space: nowrap; }
-  .project-desc { color: #999; font-size: 13px; line-height: 1.7; }
-  .project-highlights { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
-  .highlight { font-size: 12px; color: #777; padding-left: 16px; position: relative; line-height: 1.7; }
+  .project-desc { color: #fff; font-size: 14px; line-height: 1.7; }
+  .project-highlights { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .highlight { font-size: 13px; color: #fff; padding-left: 18px; position: relative; line-height: 1.7; }
   .highlight::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
-  .highlight b { color: #b0b0a8; font-weight: 600; }
+  .highlight b { color: #fff; font-weight: 700; }
 
   /* Awards */
   .award { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--border); align-items: start; }
   .award:first-of-type { border-top: 1px solid var(--border); }
-  .award-name { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-  .award-detail { font-size: 12px; color: #888; line-height: 1.6; }
+  .award-name { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .award-detail { font-size: 13px; color: #fff; line-height: 1.6; }
   .award-date { font-size: 11px; color: var(--accent); white-space: nowrap; }
 
   /* Community */
   .role { padding: 22px 0; border-bottom: 1px solid var(--border); }
   .role:first-of-type { border-top: 1px solid var(--border); }
   .role-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
-  .role-title { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: #fff; }
+  .role-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: #fff; }
   .role-period { font-size: 11px; color: var(--muted); }
-  .role-org { font-size: 11px; color: var(--accent2); letter-spacing: 0.1em; margin-bottom: 10px; }
-  .role-desc { font-size: 12px; color: #888; line-height: 1.7; }
+  .role-org { font-size: 12px; color: var(--accent2); letter-spacing: 0.1em; margin-bottom: 10px; }
+  .role-desc { font-size: 13px; color: #fff; line-height: 1.7; }
 
   /* Skills */
   .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
   .skill-group { background: var(--bg); padding: 24px; }
   .skill-group-label { font-size: 10px; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { font-size: 11px; background: #181818; border: 1px solid #282828; padding: 5px 12px; color: #bbb; }
+  .tag { font-size: 12px; background: #181818; border: 1px solid #282828; padding: 6px 14px; color: #bbb; }
   .span-2 { grid-column: span 2; }
 
   /* Contact */
   .contact-row { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px; align-items: center; }
-  .contact-item { font-size: 13px; color: var(--muted); }
+  .contact-item { font-size: 14px; color: var(--muted); }
   .contact-item a { color: var(--accent2); text-decoration: none; }
   .contact-item a:hover { color: var(--accent); }
 
-  @media (max-width: 560px) {
+  @media (max-width: 700px) {
+    main { padding: 40px 20px 80px; }
     .skills-grid { grid-template-columns: 1fr; }
     .span-2 { grid-column: span 1; }
     .project-header { flex-direction: column; }
     .award { grid-template-columns: 1fr; }
+    .role-header { flex-direction: column; gap: 4px; }
   }
 </style>
 </head>
@@ -129,7 +131,7 @@
     <div class="hero-links">
       <a href="https://www.linkedin.com/in/shashwat-singh-6a165a28b/" target="_blank">⟶ LinkedIn</a>
       <a href="https://github.com/ShashwatSingh67" target="_blank">⟶ GitHub</a>
-      <a href="Shashwat_Singh_cv.pdf" download="Shashwat_Singh_Resume.pdf">⬇ Resume</a>
+      <a href="Shashwat_Singh_cv.pdf" target="_blank">⬇ Resume</a>
     </div>
   </div>
 
@@ -172,35 +174,6 @@
     </div>
   </section>
 
-  <!-- AWARDS -->
-  <section>
-    <div class="section-label">Awards & Achievements</div>
-
-    <div class="award">
-      <div>
-        <div class="award-name">Susquehanna Algothon</div>
-        <div class="award-detail">Built a Python-based trading algorithm designed to maximise profits in a simulated market environment. Applied Sharpe-optimised reward functions to improve risk-reduction decision-making. Reduced portfolio volatility by ~10–20% compared to baseline strategies in simulation testing.</div>
-      </div>
-      <div class="award-date">Jul 2025</div>
-    </div>
-
-    <div class="award">
-      <div>
-        <div class="award-name">SQUAD Datathon — 4th Place</div>
-        <div class="award-detail">18-hour university-wide datathon as part of a three-member team. Implemented a Random Forest classifier (200 trees) achieving 80% accuracy — a 4% improvement over base models and 99% of the industry benchmark. Improved learning efficiency ~15% through feature selection and noise reduction.</div>
-      </div>
-      <div class="award-date">Apr 2025</div>
-    </div>
-
-    <div class="award">
-      <div>
-        <div class="award-name">ACPC Competitive Programming</div>
-        <div class="award-detail">Participated in AUCPL, AllUni, and the South Pacific ICPC Preliminary Contest. First-solved a problem in AllUni against 300+ competitors across Australia and New Zealand.</div>
-      </div>
-      <div class="award-date">Feb 2025 – Present</div>
-    </div>
-  </section>
-
   <!-- COMMUNITY -->
   <section>
     <div class="section-label">Community Involvement</div>
@@ -230,6 +203,35 @@
       </div>
       <div class="role-org">Adelaide Rover Team</div>
       <div class="role-desc">Designed schematics and industry-standard PCBs in Altium Designer. Implemented reverse-polarity protection and maximum stand-off voltage considerations to minimise electrical failure risk. Worked closely across multiple sub-teams in a coordinated professional environment.</div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section>
+    <div class="section-label">Awards & Achievements</div>
+
+    <div class="award">
+      <div>
+        <div class="award-name">Susquehanna Algothon</div>
+        <div class="award-detail">Built a Python-based trading algorithm designed to maximise profits in a simulated market environment. Applied Sharpe-optimised reward functions to improve risk-reduction decision-making. Reduced portfolio volatility by ~10–20% compared to baseline strategies in simulation testing.</div>
+      </div>
+      <div class="award-date">Jul 2025</div>
+    </div>
+
+    <div class="award">
+      <div>
+        <div class="award-name">SQUAD Datathon — 4th Place</div>
+        <div class="award-detail">18-hour university-wide datathon as part of a three-member team. Implemented a Random Forest classifier (200 trees) achieving 80% accuracy — a 4% improvement over base models and 99% of the industry benchmark. Improved learning efficiency ~15% through feature selection and noise reduction.</div>
+      </div>
+      <div class="award-date">Apr 2025</div>
+    </div>
+
+    <div class="award">
+      <div>
+        <div class="award-name">ACPC Competitive Programming</div>
+        <div class="award-detail">Participated in AUCPL, AllUni, and the South Pacific ICPC Preliminary Contest. First-solved a problem in AllUni against 300+ competitors across Australia and New Zealand.</div>
+      </div>
+      <div class="award-date">Feb 2025 – Present</div>
     </div>
   </section>
 
@@ -271,13 +273,7 @@
   <!-- CONTACT -->
   <section>
     <div class="section-label">Contact</div>
-    <p style="color:#888;font-size:13px;">Currently based in Adelaide, Australia. Open to internships, research roles, and interesting collaborations.</p>
+    <p style="color:#888;font-size:14px;">Currently based in Adelaide, Australia. Open to internships, research roles, and interesting collaborations.</p>
     <div class="contact-row">
-      <div class="contact-item">Email: <a href="mailto:shashwatsingh5021@gmail.com">shashwatsingh5021@gmail.com</a></div>
-      <div class="contact-item">LinkedIn: <a href="https://www.linkedin.com/in/shashwat-singh-6a165a28b/" target="_blank">shashwat-singh</a></div>
-    </div>
-  </section>
-
-</main>
-</body>
-</html>
+      <div class="contact-item">Email: <a href="/cdn-cgi/l/email-protection#85f6ede4f6edf2e4f1f6ecebe2edb0b5b7b4c5e2e8e4ece9abe6eae8"><span class="__cf_email__" data-cfemail="11627970627966706562787f76792421232051767c70787d3f727e7c">[email&#160;protected]</span></a></div>
+      <div class="contact-item">LinkedIn: <a
